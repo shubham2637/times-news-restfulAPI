@@ -1,12 +1,11 @@
 from flask import Flask, jsonify
-
+import re
+import requests
+from requests_html import HTMLSession
 app = Flask(__name__)
 
 @app.route('/getTimeStories', methods=['GET'])
 def get_timesnews():
-    import re
-    import requests
-    from requests_html import HTMLSession
     URL = "https://time.com/"
     try:
         session = HTMLSession()
